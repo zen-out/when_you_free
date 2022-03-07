@@ -1,5 +1,5 @@
-const { upset } = require("whats_wrong")
-const { getType, catchError } = require("./getType")
+import { upset } from "whats_wrong"
+import { getType, catchError } from "./getType"
 
 /**
  * @example
@@ -11,7 +11,7 @@ const { getType, catchError } = require("./getType")
  * @param {any} type
  * @returns {string}
  */
-function getReadableFormat(getDate, type = "from") {
+export function getReadableFormat(getDate, type = "from") {
     let formatted = getType(getDate)
     let seeIfValid = catchError(formatted)
     if (!seeIfValid.error) {
@@ -35,7 +35,7 @@ function getReadableFormat(getDate, type = "from") {
  * @param {any}  type
  * @returns {any}
  */
-function format(date, type) {
+export function format(date, type) {
     let formats = {
         localInput: 'YYYY-MM-DDTHH:mm:ss', // <input type="datetime-local" step="1" />
         dateInput: 'YYYY-MM-DD', // <input type="date" />
@@ -69,7 +69,7 @@ function format(date, type) {
  * @param {any} string
  * @returns {any}
  */
-function digitalToSeconds(string) {
+export function digitalToSeconds(string) {
     let getType = format(string, "hh:mm:ss")
     if (typeof getType === "string") {
         let spliced = getType.split(":")
@@ -93,7 +93,7 @@ function digitalToSeconds(string) {
  * @param {any} stringInput
  * @returns {date}
  */
-function formatDateToPost(stringInput) {
+export function formatDateToPost(stringInput) {
     let getDate = getType(stringInput)
     let seeIfValid = catchError(getDate)
     if (seeIfValid !== true) {
@@ -103,6 +103,3 @@ function formatDateToPost(stringInput) {
         return new Date(proper);
     }
 }
-
-
-module.exports = { getReadableFormat, digitalToSeconds, formatDateToPost, format }

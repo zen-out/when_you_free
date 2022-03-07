@@ -1,15 +1,16 @@
-const { see, hourglass } = require("code_clarity")
-const moment = require("moment")
+import moment from "moment"
+import { containsThis, hhmm, hhmmss, dashDDMMYYYY, dashYYYYMMDD, hyphenDDMMYYYY, hyphenYYYYMMDD, yyyymmdd, knexDate, stringDate } from "define_me"
+
+import { createHour, createMinute, createMonth, createFullDate, createDay } from "./create"
+
+
 moment.locale("en")
-const define_me = require("define_me")
 
-const { createHour, createMinute, createMonth, createFullDate, createDay } = require("./create")
-
-function arrStringtoNum(arr) {
+export function arrStringtoNum(arr) {
     return arr.map(Number);
 }
 
-function handleDigital(hhmm) {
+export function handleDigital(hhmm) {
     let split = hhmm.split(":")
     let numbers = arrStringtoNum(split)
     if (split.length === 2) {
@@ -19,7 +20,7 @@ function handleDigital(hhmm) {
     }
 }
 
-function handleDashed(ddmmyyyy) {
+export function handleDashed(ddmmyyyy) {
     let split = ddmmyyyy.split("/")
     let numbers = arrStringtoNum(split)
     if (split[0].length === 4) {
@@ -29,7 +30,7 @@ function handleDashed(ddmmyyyy) {
     }
 }
 
-function handleHyphen(ddmmyyyy) {
+export function handleHyphen(ddmmyyyy) {
     let split = ddmmyyyy.split("-")
     let numbers = arrStringtoNum(split)
     if (split[0].length === 4) {
@@ -41,7 +42,7 @@ function handleHyphen(ddmmyyyy) {
 }
 
 
-function handleNumber(yyyymmdd) {
+export function handleNumber(yyyymmdd) {
     let year = yyyymmdd.slice(0, 4)
     let month = yyyymmdd.slice(4, 6)
     let day = yyyymmdd.slice(6, 8)
@@ -57,24 +58,24 @@ function handleNumber(yyyymmdd) {
  * @param {any} date
  * @returns {any}
  */
-function isDate(date) {
-    if (define_me.containsThis(date, define_me.hhmm)) {
+export function isDate(date) {
+    if (containsThis(date, hhmm)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.hhmmss)) {
+    } else if (containsThis(date, hhmmss)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.dashDDMMYYYY)) {
+    } else if (containsThis(date, dashDDMMYYYY)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.dashYYYYMMDD)) {
+    } else if (containsThis(date, dashYYYYMMDD)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.hyphenDDMMYYYY)) {
+    } else if (containsThis(date, hyphenDDMMYYYY)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.hyphenYYYYMMDD)) {
+    } else if (containsThis(date, hyphenYYYYMMDD)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.yyyymmdd)) {
+    } else if (containsThis(date, yyyymmdd)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.knexDate)) {
+    } else if (containsThis(date, knexDate)) {
         return true;
-    } else if (define_me.containsThis(date, define_me.stringDate)) {
+    } else if (containsThis(date, stringDate)) {
         return true;
     } else if (date instanceof Date) {
         return true;
@@ -93,25 +94,25 @@ function isDate(date) {
  * @param {any} date
  * @returns {object} moment
  */
-function getType(date) {
-    if (define_me.containsThis(date, define_me.hhmm)) {
+export function getType(date) {
+    if (containsThis(date, hhmm)) {
         return handleDigital(date)
-    } else if (define_me.containsThis(date, define_me.hhmmss)) {
+    } else if (containsThis(date, hhmmss)) {
         return handleDigital(date)
-    } else if (define_me.containsThis(date, define_me.dashDDMMYYYY)) {
+    } else if (containsThis(date, dashDDMMYYYY)) {
         return handleDashed(date)
-    } else if (define_me.containsThis(date, define_me.dashYYYYMMDD)) {
+    } else if (containsThis(date, dashYYYYMMDD)) {
         return handleDashed(date)
-    } else if (define_me.containsThis(date, define_me.hyphenDDMMYYYY)) {
+    } else if (containsThis(date, hyphenDDMMYYYY)) {
         return handleHyphen(date)
             // return moment(date)
-    } else if (define_me.containsThis(date, define_me.hyphenYYYYMMDD)) {
+    } else if (containsThis(date, hyphenYYYYMMDD)) {
         return handleHyphen(date)
-    } else if (define_me.containsThis(date, define_me.yyyymmdd)) {
+    } else if (containsThis(date, yyyymmdd)) {
         return handleNumber(date)
-    } else if (define_me.containsThis(date, define_me.knexDate)) {
+    } else if (containsThis(date, knexDate)) {
         return moment(date)
-    } else if (define_me.containsThis(date, define_me.stringDate)) {
+    } else if (containsThis(date, stringDate)) {
         return moment(date)
     } else if (date instanceof Date) {
         return moment(date)
@@ -131,12 +132,10 @@ function getType(date) {
  * @param {any} getDate
  * @returns {any}
  */
-function catchError(getDate) {
+export function catchError(getDate) {
     if (getDate === undefined || typeof getDate !== "object") {
         return upset("not a valid date" + getDate, "when_you_free module")
     } else {
         return true;
     }
 }
-
-module.exports = { catchError, getType, isDate }

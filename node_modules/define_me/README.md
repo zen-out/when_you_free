@@ -4,11 +4,16 @@
 - Keep all important definitions here 
 
 
-# Instructions: 
-```npm install define_me ``` 
- ``` const define_me =  require('define_me')```
+
+# define_me
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![NPM Downloads](https://img.shields.io/npm/dw/define_me)
+## Instructions: 
+```npm install define_me ``` 
+ ``` const define_me =  require('define_me')```
+
+
+
 ## Functions
 
 <dl>

@@ -1,17 +1,17 @@
-const { getType, catchError } = require("./getType")
-const { upset } = require("whats_wrong")
-    /**
-     * @example
-     * const when_you_free = require("when_you_free")
-     * letTrue = when_you_free.isBefore("Dec 11, 2012", "Dec 12, 2012")
-     * 
-     * @author zen-out
-     * @date 2022-03-06
-     * @param {any} start
-     * @param {any}  end
-     * @returns {any}
-     */
-function isBefore(start, end) {
+import { getType, catchError } from "./getType"
+import { upset } from "whats_wrong"
+/**
+ * @example
+ * const when_you_free = require("when_you_free")
+ * letTrue = when_you_free.isBefore("Dec 11, 2012", "Dec 12, 2012")
+ * 
+ * @author zen-out
+ * @date 2022-03-06
+ * @param {any} start
+ * @param {any}  end
+ * @returns {any}
+ */
+export function isBefore(start, end) {
     let dateOne = getType(start)
     let dateTwo = getType(end)
     let seeIfValid1 = catchError(dateOne)
@@ -47,7 +47,7 @@ function isBefore(start, end) {
       * @param {any} type
       * @returns {integer}
       */
-function difference(one, two, type) {
+export function difference(one, two, type) {
     let dateOne = getType(one)
     let dateTwo = getType(two)
     let seeIfValid = catchError(dateOne)
@@ -84,7 +84,7 @@ let isTrue = when_you_free.isBetween(dateString["one"], dateString["two"], dateS
  * @param {any}  end
  * @returns {any}
  */
-function isBetween(target, start, end) {
+export function isBetween(target, start, end) {
     let dateZero = getType(target)
     let dateOne = getType(start)
     let dateTwo = getType(end)
@@ -99,6 +99,3 @@ function isBetween(target, start, end) {
         return upset("something wrong with date - is between function", "when_you_free/compare.js")
     }
 }
-
-
-module.exports = { isBefore, difference, isBetween }

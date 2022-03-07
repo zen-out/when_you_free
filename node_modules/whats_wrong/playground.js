@@ -1,5 +1,5 @@
-const { upset } = require("./index.js")
+const whats_wrong = require("./dist/index.js")
 
-upset({ object: "can also accept object" }, "location")
-const whats_wrong = require("./index.js")
-whats_wrong.upset("error message", "location")
+let output = whats_wrong.upset("hello", "hello")
+
+console.log("🚀 ~ file: playground.js ~ line 3 ~ output", output)

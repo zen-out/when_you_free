@@ -1,4 +1,4 @@
-const define_me = require('./index.js')
+const define_me = require('./dist/index.js')
 
 let getThis = define_me.containsThis(".git", define_me.git);
 let checkDate = define_me.containsThis("March 20 2012", define_me.stringDate)
@@ -11,4 +11,4 @@ let output5 = define_me.containsThis("2019-2-10", define_me.hyphenYYYYMMDD)
 let output4 = define_me.containsThis("2020-02-22", define_me.hyphenYYYYMMDD)
 let output12 = define_me.containsThis("Mar 2 2019", define_me.stringDate)
 let output14 = define_me.containsThis("Mar 2 2022", define_me.stringDate)
-let trueThis = define_me.containsThis("digital", define_mehhmmss)
+let trueThis = define_me.containsThis("digital", define_me.hhmmss)

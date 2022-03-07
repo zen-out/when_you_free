@@ -1,4 +1,4 @@
-const moment = require("moment")
+import moment from "moment"
 moment.locale("en")
 
 /**
@@ -11,7 +11,7 @@ moment.locale("en")
  * @param {any}  second
  * @returns {any}
  */
-function createHour(hour, minute, second) {
+export function createHour(hour, minute, second) {
     let time = moment({
         hour: hour,
         minute: minute,
@@ -29,7 +29,7 @@ function createHour(hour, minute, second) {
  * @param {any}  second
  * @returns {any}
  */
-function createMinute(minute, second) {
+export function createMinute(minute, second) {
     let time = moment({
         minute: minute,
         second: second
@@ -46,7 +46,7 @@ function createMinute(minute, second) {
  * @param {any}  month
  * @returns {any}
  */
-function createMonth(year, month) {
+export function createMonth(year, month) {
     let date = moment({
         year: year,
         month: month,
@@ -64,7 +64,7 @@ function createMonth(year, month) {
  * @param {any}  day
  * @returns {any}
  */
-function createDay(year, month, day) {
+export function createDay(year, month, day) {
     month = month - 1
     let date = moment({
         year: year,
@@ -87,7 +87,7 @@ function createDay(year, month, day) {
  * @param {any}  second
  * @returns {any}
  */
-function createFullDate(year, month, day, hour, minute, second) {
+export function createFullDate(year, month, day, hour, minute, second) {
     let full = moment({
         year: year,
         month: month,
@@ -99,5 +99,3 @@ function createFullDate(year, month, day, hour, minute, second) {
     return full
 
 }
-
-module.exports = { createHour, createMinute, createDay, createMonth, createFullDate }

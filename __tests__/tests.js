@@ -1,4 +1,4 @@
-const formatDateTime = require("../index")
+const formatDateTime = require("../src")
 const t = require("node_basetest")
 
 function testDate(date, expected) {

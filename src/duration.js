@@ -1,6 +1,6 @@
-const { getType, catchError } = require("./getType")
-const { upset } = require("whats_wrong")
-const moment = require("moment")
+import { getType, catchError } from "./getType"
+import { upset } from "whats_wrong"
+import { duration as _duration } from "moment"
 
 /**
  * @example
@@ -12,14 +12,14 @@ const moment = require("moment")
  * @param {any}  type
  * @returns {any}
  */
-function getDuration(start, end, type) {
+export function getDuration(start, end, type) {
     let dateOne = getType(start)
     let dateTwo = getType(end)
     let seeIfValid1 = catchError(dateOne)
     let seeIfValid2 = catchError(dateTwo)
     let isError = seeIfValid1 === true && seeIfValid2 === true
     if (isError === true) {
-        let duration = moment.duration({
+        let duration = _duration({
             from: dateOne,
             to: dateTwo
         });
@@ -37,8 +37,7 @@ function getDuration(start, end, type) {
  * @param {any}  dateTwo
  * @returns {any}
  */
-function addDurations(dateOne, dateTwo) {
+export function addDurations(dateOne, dateTwo) {
     return dateOne.add(dateTwo)
 
 }
-module.exports = { getDuration }

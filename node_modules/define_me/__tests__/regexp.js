@@ -1,6 +1,6 @@
 const t = require("node_basetest")
 
-const define_me = require("../index")
+const define_me = require("../dist/index.js")
 describe("should hit regexp", () => {
     it("should remove .git", () => {
 

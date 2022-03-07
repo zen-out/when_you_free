@@ -1,5 +1,3 @@
-const { node_modules, git } = require("./definitions")
-
 /**
  * @example
  * 
@@ -68,5 +66,4 @@ function matchWords(subject, words) {
 
     return subject.match(regex) || [];
 }
-matchWords("one plus two equals three", ["one", "two", "three"])
-module.exports = { containsThis, matchWords }
+export { containsThis, matchWords }

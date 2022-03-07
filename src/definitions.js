@@ -1,4 +1,4 @@
-let dictionary = {
+export let dictionary = {
     "January": 0,
     "February": 1,
     "March": 2,
@@ -25,4 +25,3 @@ let dictionary = {
     'Dec': 11,
 
 }
-module.exports = { dictionary }
