@@ -1,0 +1,29 @@
+{
+    "name": "when_you_free",
+    "version": "1.0.0",
+    "description": "way to utilize date functions in a more organized manner",
+    "main": "index.js",
+    "scripts": {
+        "test": "node __tests__/index.js",
+        "docs": "rm -rf docs && ./node_modules/.bin/jsdoc --configure ./jsdoc.json -d docs --verbose",
+        "play": "node playground.js",
+        "deploy": "npm run test && git add . && git commit -m 'updated' && git push && npm version patch && npm publish"
+    },
+    "keywords": [
+        "date"
+    ],
+    "author": "zen-out",
+    "license": "MIT",
+    "dependencies": {
+        "code_clarity": "^1.0.22",
+        "define_me": "^1.0.6",
+        "explain_me": "^1.1.11",
+        "gulp": "^4.0.2",
+        "gulp-mocha": "^8.0.0",
+        "moment": "^2.29.1",
+        "node_basetest": "^2.6.14",
+        "whats_wrong": "^1.0.1"
+    },
+    "homepage": "https://zen-out.github.io/packages/when_you_free",
+    "repository": "https://github.com/zen-out/when_you_free"
+}
