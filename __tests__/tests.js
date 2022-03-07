@@ -85,7 +85,5 @@ describe("it should accurately return dates", () => {
         t.T(typeIsString4)
         t.DOESNOTHAVE(getFormat5, "NOT VALID")
 
-
-
     })
 })
