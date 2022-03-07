@@ -4,8 +4,7 @@
 
 ## Instructions: 
 ```npm install when_you_free ``` 
- ``` 
-const when_you_free =  require('when_you_free')```
+ ``` const when_you_free = require('when_you_free') ```
 
 ## Functions
 
