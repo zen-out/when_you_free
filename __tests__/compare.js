@@ -1,6 +1,6 @@
 const moment = require("moment")
 const { T, F } = require("node_basetest")
-const when_you_free = require("../src")
+const when_you_free = require("../dist/index.js")
 let dateString = {
     one: "Dec 11, 2012",
     two: "Dec 12, 2013",
