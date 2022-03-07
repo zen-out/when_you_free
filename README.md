@@ -2,12 +2,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![NPM Downloads](https://img.shields.io/npm/dw/when_you_free)## Instructions: 
 ```npm install when_you_free ``` 
- ``` 
-const when_you_free =  require('when_you_free')```
+ ``` const when_you_free =  require('when_you_free')```
+ 
 ## If install on html...: 
 ```<script src="https://cdn.jsdelivr.net/npm/when_you_free/dist/index.js"></script> ``` 
- ``` 
-const output =  when_you_free.method(parameter)```
+ ``` const output =  when_you_free.method(parameter)```
 
 ## Functions
 
@@ -55,10 +54,10 @@ const output =  when_you_free.method(parameter)```
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| start | <code>any</code> | 
-| end | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| start | <code>any</code> |
+| end   | <code>any</code> |
 
 **Example**  
 ```js
@@ -72,11 +71,11 @@ letTrue = when_you_free.isBefore("Dec 11, 2012", "Dec 12, 2012")
 **Date**: 2022-01-13  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| one | <code>any</code> | 
-| two | <code>any</code> | 
-| type | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| one   | <code>any</code> |
+| two   | <code>any</code> |
+| type  | <code>any</code> |
 
 **Example**  
 ```js
@@ -100,11 +99,11 @@ let isTrue4 = when_you_free.difference(dateObject["one"], dateObject["two"], "mo
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| target | <code>any</code> | 
-| start | <code>any</code> | 
-| end | <code>any</code> | 
+| Param  | Type             |
+|--------|------------------|
+| target | <code>any</code> |
+| start  | <code>any</code> |
+| end    | <code>any</code> |
 
 **Example**  
 ```js
@@ -129,11 +128,11 @@ let isTrue = when_you_free.isBetween(dateString["one"], dateString["two"], dateS
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| hour | <code>any</code> | 
-| minute | <code>any</code> | 
-| second | <code>any</code> | 
+| Param  | Type             |
+|--------|------------------|
+| hour   | <code>any</code> |
+| minute | <code>any</code> |
+| second | <code>any</code> |
 
 **Example**  
 ```js
@@ -146,10 +145,10 @@ createHour(hour, minute, second)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| minute | <code>any</code> | 
-| second | <code>any</code> | 
+| Param  | Type             |
+|--------|------------------|
+| minute | <code>any</code> |
+| second | <code>any</code> |
 
 **Example**  
 ```js
@@ -162,10 +161,10 @@ createMinute(minute, second)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| year | <code>any</code> | 
-| month | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| year  | <code>any</code> |
+| month | <code>any</code> |
 
 **Example**  
 ```js
@@ -178,11 +177,11 @@ createMonth(year, month)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| year | <code>any</code> | 
-| month | <code>any</code> | 
-| day | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| year  | <code>any</code> |
+| month | <code>any</code> |
+| day   | <code>any</code> |
 
 **Example**  
 ```js
@@ -195,14 +194,14 @@ createDay(year, month, day)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| year | <code>any</code> | 
-| month | <code>any</code> | 
-| day | <code>any</code> | 
-| hour | <code>any</code> | 
-| minute | <code>any</code> | 
-| second | <code>any</code> | 
+| Param  | Type             |
+|--------|------------------|
+| year   | <code>any</code> |
+| month  | <code>any</code> |
+| day    | <code>any</code> |
+| hour   | <code>any</code> |
+| minute | <code>any</code> |
+| second | <code>any</code> |
 
 **Example**  
 ```js
@@ -215,11 +214,11 @@ createFullDate(year, month, day, hour, minute, second)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| start | <code>any</code> | 
-| end | <code>any</code> | 
-| type | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| start | <code>any</code> |
+| end   | <code>any</code> |
+| type  | <code>any</code> |
 
 **Example**  
 ```js
@@ -232,10 +231,10 @@ let getDuration = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| dateOne | <code>any</code> | 
-| dateTwo | <code>any</code> | 
+| Param   | Type             |
+|---------|------------------|
+| dateOne | <code>any</code> |
+| dateTwo | <code>any</code> |
 
 <a name="getReadableFormat"></a>
 
@@ -244,10 +243,10 @@ let getDuration = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03
 **Date**: 2022-01-13  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| getDate | <code>any</code> | 
-| type | <code>any</code> | 
+| Param   | Type             |
+|---------|------------------|
+| getDate | <code>any</code> |
+| type    | <code>any</code> |
 
 **Example**  
 ```js
@@ -261,10 +260,10 @@ getReadableFormat("Dec 11, 2012", "to") 2 months ago
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| date | <code>any</code> | 
-| type | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| date  | <code>any</code> |
+| type  | <code>any</code> |
 
 **Example**  
 ```js
@@ -278,9 +277,9 @@ let formatted2 = when_you_free.format(dateTime["one"], "LL")
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| string | <code>any</code> | 
+| Param  | Type             |
+|--------|------------------|
+| string | <code>any</code> |
 
 **Example**  
 ```js
@@ -293,9 +292,9 @@ let digitalOne = when_you_free.digitalToSeconds("11:22")
 **Date**: 2022-01-13  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| stringInput | <code>any</code> | 
+| Param       | Type             |
+|-------------|------------------|
+| stringInput | <code>any</code> |
 
 **Example**  
 ```js
@@ -308,9 +307,9 @@ formatDateToPost(stringInput)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| date | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| date  | <code>any</code> |
 
 **Example**  
 ```js
@@ -324,9 +323,9 @@ isDate(date)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| date | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| date  | <code>any</code> |
 
 **Example**  
 ```js
@@ -339,9 +338,9 @@ getType()
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| getDate | <code>any</code> | 
+| Param   | Type             |
+|---------|------------------|
+| getDate | <code>any</code> |
 
 **Example**  
 ```js
