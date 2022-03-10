@@ -1,7 +1,9 @@
 const define_me = require('./dist/index.js')
 
 let getThis = define_me.containsThis(".git", define_me.git);
+console.log("🚀 ~ file: playground.js ~ line 4 ~ getThis", getThis)
 let checkDate = define_me.containsThis("March 20 2012", define_me.stringDate)
+console.log("🚀 ~ file: playground.js ~ line 6 ~ checkDate", checkDate)
 let output3 = define_me.containsThis("22:44", define_me.hhmm)
 let output10 = define_me.containsThis("01/12/2022", define_me.dashDDMMYYYY)
 let output11 = define_me.containsThis("2022/02/02", define_me.dashYYYYMMDD)

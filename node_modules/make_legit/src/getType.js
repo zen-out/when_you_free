@@ -1,8 +1,7 @@
-const check = require("check-types")
-const define_me = require("define_me")
-const moment = require("moment")
+import check from "check-types"
+import define_me from "define_me"
 
-function isDate(date) {
+export function isDate(date) {
     if (define_me.contains(date, define_me.hhmm)) {
         return true;
     } else if (define_me.contains(date.define_me.hhmmss)) {
@@ -34,7 +33,7 @@ function isDate(date) {
  * @param {any} data
  * @returns {string} data, number, array, string object, boolean undefined
  */
-function getType(data) {
+export function getType(data) {
     if (data instanceof Date) {
         return "date"
     } else
@@ -50,5 +49,3 @@ function getType(data) {
         return undefined;
     }
 }
-
-module.exports = { getType }

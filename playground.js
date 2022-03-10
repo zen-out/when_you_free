@@ -1,4 +1,4 @@
-const when_you_free = require("./dist/index.js")
+const when_you_free = require("./index.js")
 
 let dateString = {
     one: "Dec 11, 2012",

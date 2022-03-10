@@ -1,6 +1,5 @@
-const { formatDateTime } = require("format_date_time_moment/node")
-
-const { getType } = require("./getType")
+import { formatDateToPost, format } from 'when_you_free'
+import { getType } from "./getType"
 
 
 /**
@@ -11,13 +10,13 @@ const { getType } = require("./getType")
  * @param {any} data
  * @returns {date}
  */
-function formatDate(data) {
+export function formatDate(data) {
     let whatsThis = getType(data)
     if (whatsThis === "string") {
-        let formatDate = formatDateTime.formatDateToPost(data)
+        let formatDate = formatDateToPost(data)
         return formatDate
     } else if (whatsThis === "object") {
-        let formatDate = formatDateTime.formatDateToPost(data)
+        let formatDate = formatDateToPost(data)
         return new Date(formatDate)
     } else {
         return undefined
@@ -36,7 +35,7 @@ function formatDate(data) {
  * @param {any} type
  * @returns {number}
  */
-function formatNumber(data) {
+export function formatNumber(data) {
     let num;
     // string 
     let whatsThis = getType(data)
@@ -52,7 +51,7 @@ function formatNumber(data) {
         }
         num = sum;
     } else if (whatsThis === "date") {
-        let formatDate = formatDateTime.format(data, "YYYYMMDDHHMMSS")
+        let formatDate = format(data, "YYYYMMDDHHMMSS")
         let parsed = parseInt(formatDate)
         num = parsed;
     } else {
@@ -73,7 +72,7 @@ function formatNumber(data) {
  * @param {any} data
  * @returns {array}
  */
-function formatArray(data) {
+export function formatArray(data) {
     // string 
     let newArr = []
     let whatsThis = getType(data)
@@ -91,7 +90,7 @@ function formatArray(data) {
             newArr.push(item)
         }
     } else if (whatsThis === "date") {
-        let formatted = formatDateTime.format(data, "ll")
+        let formatted = format(data, "ll")
         newArr.push(formatted)
     } else if (whatsThis === "boolean") {
         newArr.push(data)
@@ -115,7 +114,7 @@ function formatArray(data) {
  * @param {any} data
  * @returns {object}
  */
-function formatObject(data) { // string 
+export function formatObject(data) { // string 
     let newObj = {}
     let whatsThis = getType(data)
     if (whatsThis === "array") {
@@ -138,7 +137,7 @@ function formatObject(data) { // string
  * @returns {string}
  */
 
-function formatString(data) {
+export function formatString(data) {
     // string 
     let string;
     let whatsThis = getType(data)
@@ -157,7 +156,7 @@ function formatString(data) {
     } else if (whatsThis === "object") {
         string = JSON.stringify(data)
     } else if (whatsThis === "date") {
-        let getDate = formatDateTime.format(data, "ll")
+        let getDate = format(data, "ll")
         string = getDate;
     } else if (whatsThis === "boolean") {
         string = data.toString()
@@ -180,7 +179,7 @@ function formatString(data) {
  * @param {any} data
  * @returns {boolean}
  */
-function formatBoolean(data) {
+export function formatBoolean(data) {
     let bool;
     // string 
     let whatsThis = getType(data)
@@ -200,6 +199,3 @@ function formatBoolean(data) {
         return undefined;
     }
 }
-
-
-module.exports = { formatDate, formatNumber, formatArray, formatObject, formatString, formatBoolean }

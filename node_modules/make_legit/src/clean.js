@@ -1,14 +1,14 @@
-const cleanDeep = require('clean-deep')
-const { getType } = require("./getType")
-    /**
-     * @example 
-     * trimObj(obj)
-     * @author zen-out
-     * @date 2022-03-03
-     * @param {any} obj
-     * @returns {any}
-     */
-function trimObj(obj) {
+import cleanDeep from "clean-deep"
+import { getType } from './getType.js'
+/**
+ * @example 
+ * trimObj(obj)
+ * @author zen-out
+ * @date 2022-03-03
+ * @param {any} obj
+ * @returns {any}
+ */
+export function trimObj(obj) {
     // console.log("trim obj")
     if (obj instanceof Date) {
         return obj;
@@ -33,7 +33,7 @@ function trimObj(obj) {
  * @param {any} arr
  * @returns {array}
  */
-function trimArr(arr) {
+export function trimArr(arr) {
     let newArr = []
     for (let i = 0; i < arr.length; i++) {
         let type = getType(arr[i])
@@ -58,7 +58,7 @@ function trimArr(arr) {
  * @param {any} data
  * @returns {any}
  */
-function clean(data) {
+export function clean(data) {
     let type = getType(data)
     switch (type) {
         case "array":
@@ -72,5 +72,3 @@ function clean(data) {
             return data;
     }
 }
-
-module.exports = { clean, trimArr, trimObj }

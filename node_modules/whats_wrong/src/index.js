@@ -1,3 +1,4 @@
+import { format } from "make_legit"
 /**
  * @example
  * const {upset} = require("whats_wrong")
@@ -8,15 +9,15 @@
  * @param {any}  location = undefined
  * @returns {any}
  */
-export function upset(error, location = undefined, expected = "") {
-    // let getError = make_legit.format(error, "string")
-    // hourglass.start(getError)
-    // see.problem(getError)
-    // see.how(location)
-    // see.should(expected)
-    return {
-        error: error,
+export function upset(error, location = "", expected = "") {
+    let getError = format(error, "string")
+
+    let finalError = {
+        error: getError,
         location: location,
         expected: expected
     }
+    let formattedError = format(finalError, "string")
+    console.log("\n*** check ***\n" + formattedError + "\n*** end ***\n")
+    return finalError
 }

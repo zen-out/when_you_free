@@ -13,6 +13,14 @@ module.exports = {
         // to make it available in both browser and node, you have to specify option to this
         globalObject: 'this'
     },
+    externals: {
+        moment: {
+            commonjs: 'moment',
+            commonjs2: 'moment',
+            amd: 'moment',
+            root: 'moment',
+        }
+    },
     module: {
         rules: [{
             // specify whihc files shoulde be loaded
