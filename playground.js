@@ -58,3 +58,6 @@ let getType3 = when_you_free.formatDateToPost(dateHTML["two"])
 
 let getType4 = when_you_free.formatDateToPost(getType3)
 console.log("🚀 ~ file: playground.js ~ line 50 ~ getType3", getType4)
+
+let daysAgo = when_you_free.getDaysAgo(3)
+console.log(daysAgo)
