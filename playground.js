@@ -22,41 +22,41 @@ let dateObject = {
     two: "Dec 11, 2011",
     three: new Date(2020, 02, 05)
 }
-let formatted1 = when_you_free.format(dateTime["one"], "ll")
+let formatted1 = when_you_free.isDate(dateString["one"])
 console.log("🚀 ~ file: playground.js ~ line 26 ~ formatted1", formatted1)
 
-let formatted2 = when_you_free.format(dateTime["one"], "LL")
-console.log("🚀 ~ file: playground.js ~ line 29 ~ formatted2", formatted2)
-let digitalOne = when_you_free.digitalToSeconds(dateTime["one"])
-console.log("🚀 ~ file: playground.js ~ line 27 ~ digitalOne", digitalOne)
+// let formatted2 = when_you_free.format(dateTime["one"], "LL")
+// console.log("🚀 ~ file: playground.js ~ line 29 ~ formatted2", formatted2)
+// let digitalOne = when_you_free.digitalToSeconds(dateTime["one"])
+// console.log("🚀 ~ file: playground.js ~ line 27 ~ digitalOne", digitalOne)
 
-let isTrue = when_you_free.isBetween(dateString["one"], dateString["two"], dateString["three"])
-console.log("🚀 ~ file: playground.js ~ line 27 ~ isTrue", isTrue)
-let isTrue3 = when_you_free.isBetween(dateHTML["one"], dateHTML["two"], dateHTML["three"])
-console.log("🚀 ~ file: playground.js ~ line 29 ~ isTrue3", isTrue3)
+// let isTrue = when_you_free.isBetween(dateString["one"], dateString["two"], dateString["three"])
+// console.log("🚀 ~ file: playground.js ~ line 27 ~ isTrue", isTrue)
+// let isTrue3 = when_you_free.isBetween(dateHTML["one"], dateHTML["two"], dateHTML["three"])
+// console.log("🚀 ~ file: playground.js ~ line 29 ~ isTrue3", isTrue3)
 
-let isTrue4 = when_you_free.isBetween(dateObject["one"], dateObject["two"], dateObject["three"])
+// let isTrue4 = when_you_free.isBetween(dateObject["one"], dateObject["two"], dateObject["three"])
 
-console.log("🚀 ~ file: playground.js ~ line 31 ~ isTrue4", isTrue4)
+// console.log("🚀 ~ file: playground.js ~ line 31 ~ isTrue4", isTrue4)
 
-let isFalse = when_you_free.isBetween(dateString["two"], dateString["one"], dateString["three"])
-console.log("🚀 ~ file: playground.js ~ line 36 ~ isFalse", isFalse)
+// let isFalse = when_you_free.isBetween(dateString["two"], dateString["one"], dateString["three"])
+// console.log("🚀 ~ file: playground.js ~ line 36 ~ isFalse", isFalse)
 
-let isFalse3 = when_you_free.isBetween(dateHTML["two"], dateHTML["one"], dateHTML["three"])
+// let isFalse3 = when_you_free.isBetween(dateHTML["two"], dateHTML["one"], dateHTML["three"])
 
-console.log("🚀 ~ file: playground.js ~ line 26 ~ isFalse3", isFalse3)
-let isFalse4 = when_you_free.isBetween(dateObject["two"], dateObject["one"], dateObject["three"])
+// console.log("🚀 ~ file: playground.js ~ line 26 ~ isFalse3", isFalse3)
+// let isFalse4 = when_you_free.isBetween(dateObject["two"], dateObject["one"], dateObject["three"])
 
-console.log("🚀 ~ file: playground.js ~ line 40 ~ isFalse4", isFalse4)
+// console.log("🚀 ~ file: playground.js ~ line 40 ~ isFalse4", isFalse4)
 
-let getType2 = when_you_free.getReadableFormat(dateHTML["two"], "to")
+// let getType2 = when_you_free.getReadableFormat(dateHTML["two"], "to")
 
-console.log("🚀 ~ file: playground.js ~ line 45 ~ getType2", getType2)
+// console.log("🚀 ~ file: playground.js ~ line 45 ~ getType2", getType2)
 
 
-let getType3 = when_you_free.formatDateToPost(dateHTML["two"])
+// let getType3 = when_you_free.formatDateToPost(dateHTML["two"])
 
-let getType4 = when_you_free.formatDateToPost(getType3)
-console.log("🚀 ~ file: playground.js ~ line 50 ~ getType3", getType4)
-let getDays = when_you_free.dateIsWithinLimit("2022-01-01", 14)
-console.log(getDays)
+// let getType4 = when_you_free.formatDateToPost(getType3)
+// console.log("🚀 ~ file: playground.js ~ line 50 ~ getType3", getType4)
+// let getDays = when_you_free.dateIsWithinLimit("2022-01-01", 14)
+// console.log(getDays)
