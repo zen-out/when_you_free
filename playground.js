@@ -46,9 +46,9 @@ async function testWhenYouFree() {
     console.log("🚀 ~ file: playground.js ~ line 46 ~ testWhenYouFree ~ formatted1", formatted1)
     let formatted2 = when_you_free.format(dateHTML["one"], "LL")
     console.log("🚀 ~ file: playground.js ~ line 47 ~ testWhenYouFree ~ formatted2", formatted2)
-        // console.log("🚀 ~ file: index.js ~ line 355 ~ testWhenYouFree ~ formatted2", formatted2)
-        // let properDate = when_you_free.formatDateToPost(dateHTML["one"])
-        // console.log("🚀 ~ file: index.js ~ line 356 ~ testWhenYouFree ~ properDate", properDate)
+    console.log("🚀 ~ file: index.js ~ line 355 ~ testWhenYouFree ~ formatted2", formatted2)
+    let properDate = when_you_free.formatDateToPost(dateHTML["one"])
+    console.log("🚀 ~ file: index.js ~ line 356 ~ testWhenYouFree ~ properDate", properDate)
 }
 
 testWhenYouFree()
