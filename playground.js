@@ -18,19 +18,30 @@ let dateHTML = {
 }
 
 let dateObject = {
-    one: new Date(2008, 04, 04),
-    two: "Dec 11, 2011",
-    three: new Date(2020, 02, 05)
-}
-let formatted3 = when_you_free.isDate(dateString["one"])
-let getDuration = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
-let getDuration2 = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
-let addDurations = when_you_free.addDurations(getDuration, getDuration2)
-
-// let formatted2 = when_you_free.format(dateTime["one"], "LL")
-// console.log("🚀 ~ file: playground.js ~ line 29 ~ formatted2", formatted2)
-// let digitalOne = when_you_free.digitalToSeconds(dateTime["one"])
-// console.log("🚀 ~ file: playground.js ~ line 27 ~ digitalOne", digitalOne)
+        one: new Date(2008, 04, 04),
+        two: "Dec 11, 2011",
+        three: new Date(2020, 02, 05)
+    }
+    // let isTrue3 = when_you_free.difference(dateHTML["one"], dateHTML["two"], "minutes")
+    // let isBeforeTrue = when_you_free.isBefore(dateHTML["one"], dateHTML["two"])
+let isFalse2 = when_you_free.isBetween(dateHTML["one"], dateHTML["two"], dateHTML["three"])
+console.log(isFalse2)
+let getDays2 = when_you_free.dateIsWithinLimit("March 1 2022", 14)
+    // console.log("🚀 ~ file: index.js ~ line 347 ~ testWhenYouFree ~ getDays2", getDays2)
+    // let getDuration = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
+    // let getDuration2 = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
+    // console.log("🚀 ~ file: index.js ~ line 350 ~ testWhenYouFree ~ getDuration2", getDuration2)
+    // let secondReadable = when_you_free.getReadableFormat("Dec 11, 2012", "from") // in two months
+    // let firstReadable = when_you_free.getReadableFormat("Dec 11, 2012", "to") // two month sago
+    // let formatted3 = when_you_free.format(dateHTML["one"], "ll")
+    // let formatted2 = when_you_free.format(dateHTML["one"], "LL")
+    // console.log("🚀 ~ file: index.js ~ line 355 ~ testWhenYouFree ~ formatted2", formatted2)
+    // let properDate = when_you_free.formatDateToPost(dateHTML["one"])
+    // console.log("🚀 ~ file: index.js ~ line 356 ~ testWhenYouFree ~ properDate", properDate)
+    // let formatted2 = when_you_free.format(dateTime["one"], "LL")
+    // console.log("🚀 ~ file: playground.js ~ line 29 ~ formatted2", formatted2)
+    // let digitalOne = when_you_free.digitalToSeconds(dateTime["one"])
+    // console.log("🚀 ~ file: playground.js ~ line 27 ~ digitalOne", digitalOne)
 
 // let isTrue = when_you_free.isBetween(dateString["one"], dateString["two"], dateString["three"])
 // console.log("🚀 ~ file: playground.js ~ line 27 ~ isTrue", isTrue)
