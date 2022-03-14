@@ -22,8 +22,10 @@ let dateObject = {
     two: "Dec 11, 2011",
     three: new Date(2020, 02, 05)
 }
-let formatted1 = when_you_free.isDate(dateString["one"])
-console.log("🚀 ~ file: playground.js ~ line 26 ~ formatted1", formatted1)
+let formatted3 = when_you_free.isDate(dateString["one"])
+let getDuration = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
+let getDuration2 = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
+let addDurations = when_you_free.addDurations(getDuration, getDuration2)
 
 // let formatted2 = when_you_free.format(dateTime["one"], "LL")
 // console.log("🚀 ~ file: playground.js ~ line 29 ~ formatted2", formatted2)
