@@ -2,7 +2,7 @@
             o = {};
 
         function i(e) { var t = o[e]; if (void 0 !== t) return t.exports; var n = o[e] = { exports: {} }; return r[e](n, n.exports, i), n.exports }
-        i.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return i.d(t, { a: t }), t }, i.d = (e, t) => { for (var n in t) i.o(t, n) && !i.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: t[n] }) }, i.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), i.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var a = {}; return (() => { i.r(a), i.d(a, { catchError: () => y, createDay: () => s, createFullDate: () => u, createHour: () => n, createMinute: () => r, createMonth: () => o, dateIsWithinLimit: () => g, difference: () => Y, digitalToSeconds: () => _, format: () => M, formatDateToPost: () => b, getDuration: () => D, getReadableFormat: () => v, getType: () => d, isBefore: () => l, isBetween: () => w, isDate: () => h }); var e = i(896),
+        i.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return i.d(t, { a: t }), t }, i.d = (e, t) => { for (var n in t) i.o(t, n) && !i.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: t[n] }) }, i.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), i.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var a = {}; return (() => { i.r(a), i.d(a, { addDurations: () => v, catchError: () => y, createDay: () => s, createFullDate: () => u, createHour: () => n, createMinute: () => r, createMonth: () => o, dateIsWithinLimit: () => D, difference: () => Y, digitalToSeconds: () => b, format: () => _, formatDateToPost: () => T, getDuration: () => g, getReadableFormat: () => M, getType: () => d, isBefore: () => l, isBetween: () => w, isDate: () => h }); var e = i(896),
                 t = i.n(e);
 
             function n(e, n, r) { return t()({ hour: e, minute: n, second: r }) }
@@ -46,25 +46,27 @@
                     s = y(i),
                     u = y(r); return a && s && u ? r.isBetween(o, i) : (0, p.upset)("something wrong with date - is between function", "when_you_free/compare.js") }
 
-            function g(e, n) { var r = d(e),
+            function D(e, n) { var r = d(e),
                     o = new Date,
                     i = (t()(o), t()(r)),
                     a = t()(o); return t().duration({ from: i, to: a }).as("days") <= n }
 
-            function D(t, n, r) { var o = d(t),
+            function g(t, n, r) { var o = d(t),
                     i = d(n),
                     a = y(o),
                     s = y(i); return !0 == (!0 === a && !0 === s) ? (0, e.duration)({ from: o, to: i }).as(r) : (0, p.upset)("something wrong with date - get duration function", "when_you_free/duration.js") }
 
-            function v(e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "from",
+            function v(e, t) { return e.add(t) }
+
+            function M(e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "from",
                     n = d(e),
                     r = y(n); return r.error ? (0, p.upset)("something wrong with date", "format.js") : "from" === t ? n.fromNow() : n.toNow() }
 
-            function M(e, t) { var n = { localInput: "YYYY-MM-DDTHH:mm:ss", dateInput: "YYYY-MM-DD", timeInput: "HH:mm:ss", weekInput: "GGGG-[W]WW", monthInput: "YYYY-MM", mmmddyyyy: "ll", mmmmddyyyy: "LL" },
+            function _(e, t) { var n = { localInput: "YYYY-MM-DDTHH:mm:ss", dateInput: "YYYY-MM-DD", timeInput: "HH:mm:ss", weekInput: "GGGG-[W]WW", monthInput: "YYYY-MM", mmmddyyyy: "ll", mmmmddyyyy: "LL" },
                     r = d(e),
                     o = y(r); return o ? n[t] ? r.format(n[t]) : r.format(t) : o }
 
-            function _(e) { var t = M(e, "hh:mm:ss"); if ("string" == typeof t) { var n = t.split(":"); return 60 * parseInt(n[0]) * 60 + 60 * parseInt(n[1]) + parseInt(n[2]) } return (0, p.upset)("something wrong with date", "format.js") }
+            function b(e) { var t = _(e, "hh:mm:ss"); if ("string" == typeof t) { var n = t.split(":"); return 60 * parseInt(n[0]) * 60 + 60 * parseInt(n[1]) + parseInt(n[2]) } return (0, p.upset)("something wrong with date", "format.js") }
 
-            function b(e) { var t = d(e),
+            function T(e) { var t = d(e),
                     n = y(t); if (!0 !== n) return n; var r = t.toDate(); return new Date(r) } })(), a })() }));
