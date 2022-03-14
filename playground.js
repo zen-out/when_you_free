@@ -11,6 +11,8 @@ function testWhenYouFree() {
         two: new Date(2011, 1, 1),
         three: new Date(2020, 1, 1)
     }
+    let testObject = when_you_free.isBefore(new Date(), "Dec 20, 2024")
+    console.log(testObject)
     let isTrue3 = when_you_free.difference(dateHTML["one"], dateHTML["two"], "minutes")
     let isBeforeTrue = when_you_free.isBefore(dateHTML["one"], dateHTML["two"])
     let isTrue4 = when_you_free.isBetween(dateHTML["one"], dateHTML["two"], dateHTML["three"])
