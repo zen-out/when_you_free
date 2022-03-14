@@ -2,7 +2,7 @@
             i = {};
 
         function a(e) { var t = i[e]; if (void 0 !== t) return t.exports; var n = i[e] = { exports: {} }; return o[e](n, n.exports, a), n.exports }
-        a.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return a.d(t, { a: t }), t }, a.d = (e, t) => { for (var n in t) a.o(t, n) && !a.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: t[n] }) }, a.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), a.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var u = {}; return (() => { a.r(u), a.d(u, { catchError: () => w, createDay: () => i, createFullDate: () => s, createHour: () => n, createMinute: () => r, createMonth: () => o, dateIsWithinLimit: () => I, difference: () => M, digitalToSeconds: () => W, format: () => H, formatDateToPost: () => x, formatString: () => T, getDuration: () => A, getReadableFormat: () => j, getType: () => S, isBefore: () => D, isBetween: () => _, isDate: () => v }); var e = a(896),
+        a.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return a.d(t, { a: t }), t }, a.d = (e, t) => { for (var n in t) a.o(t, n) && !a.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: t[n] }) }, a.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), a.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var s = {}; return (() => { a.r(s), a.d(s, { catchError: () => b, createDay: () => i, createFullDate: () => u, createHour: () => n, createMinute: () => r, createMonth: () => o, dateIsWithinLimit: () => w, difference: () => v, digitalToSeconds: () => A, format: () => I, formatDateToPost: () => j, formatString: () => T, getDuration: () => M, getReadableFormat: () => _, getType: () => g, isBefore: () => S, isBetween: () => D, isDate: () => Y }); var e = a(896),
                 t = a.n(e);
 
             function n(e, n, r) { return t()({ hour: e, minute: n, second: r }) }
@@ -13,7 +13,7 @@
 
             function i(e, n, r) { return n -= 1, t()({ year: e, month: n, day: r }) }
 
-            function s(e, n, r, o, i, a) { return t()({ year: e, month: n, day: r, hour: o, minute: i, second: a }) }
+            function u(e, n, r, o, i, a) { return t()({ year: e, month: n, day: r, hour: o, minute: i, second: a }) }
             t().locale("en"); var f, c = a(747),
                 l = a(557),
                 m = a(77);
@@ -39,56 +39,49 @@
                 else { if (!(0, l.STARTSWITH)(e, "d")) return (0, m.upset)("not valid date", "get type in when_you_free", "should be a valid date");
                     t = h.Dec } return 2 === n.length ? i((new Date).getFullYear(), t, r) : 3 === n.length ? i(parseInt(n[2]), t, r) : void 0 }
 
-            function Y(e) { var t = e.split(":"),
-                    o = y(t); return 2 === t.length ? r(o[0], o[1]) : 3 === t.length ? n(o[0], o[1], o[2]) : void 0 }
+            function Y(e) { return !!((0, c.containsThis)(e, c.hhmm) || (0, c.containsThis)(e, c.hhmmss) || (0, c.containsThis)(e, c.dashDDMMYYYY) || (0, c.containsThis)(e, c.dashYYYYMMDD) || (0, c.containsThis)(e, c.hyphenDDMMYYYY) || (0, c.containsThis)(e, c.hyphenYYYYMMDD) || (0, c.containsThis)(e, c.yyyymmdd) || (0, c.containsThis)(e, c.knexDate) || (0, c.containsThis)(e, c.stringDate) || e instanceof Date) }
 
-            function g(e) { var t = e.split("/"),
-                    n = y(t); return 4 === t[0].length ? i(n[0], n[1], n[2]) : i(n[2], n[1], n[0]) }
+            function g(e) { return (0, c.containsThis)(e, c.knexDate) ? (h = y((p = e.split("T"))[0].split("-")), d = y(p[1].split("Z")[0].split(":")), u(h[0], h[1] - 1, h[2], d[0], d[1], d[2])) : (0, c.containsThis)(e, c.hhmm) || (0, c.containsThis)(e, c.hhmmss) ? (o = e.split(":"), a = y(o), 2 === o.length ? r(a[0], a[1]) : 3 === o.length ? n(a[0], a[1], a[2]) : void 0) : (0, c.containsThis)(e, c.dashDDMMYYYY) || (0, c.containsThis)(e, c.dashYYYYMMDD) ? function(e) { var t = e.split("/"),
+                        n = y(t); return 4 === t[0].length ? i(n[0], n[1], n[2]) : i(n[2], n[1], n[0]) }(e) : (0, c.containsThis)(e, c.hyphenDDMMYYYY) || (0, c.containsThis)(e, c.hyphenYYYYMMDD) ? function(e) { var t = e.split("-"),
+                        n = y(t); return 4 === t[0].length ? i(n[0], n[1], n[2]) : i(n[2], n[1], n[0]) }(e) : (0, c.containsThis)(e, c.yyyymmdd) ? (f = (s = e).slice(0, 4), l = s.slice(4, 6), m = s.slice(6, 8), i(parseInt(f), parseInt(l), parseInt(m))) : (0, c.containsThis)(e, c.stringDate) ? T(e) : (e instanceof Date || !!t()(e).isValid()) && t()(e); var o, a, s, f, l, m, p, h, d }
 
-            function b(e) { var t = e.split("-"),
-                    n = y(t); return 4 === t[0].length ? i(n[0], n[1], n[2]) : i(n[2], n[1], n[0]) }
+            function b(e) { return void 0 !== e && "object" === d(e) || (0, m.upset)("not a valid date" + e, "when_you_free module") }
 
-            function v(e) { return !!((0, c.containsThis)(e, c.hhmm) || (0, c.containsThis)(e, c.hhmmss) || (0, c.containsThis)(e, c.dashDDMMYYYY) || (0, c.containsThis)(e, c.dashYYYYMMDD) || (0, c.containsThis)(e, c.hyphenDDMMYYYY) || (0, c.containsThis)(e, c.hyphenYYYYMMDD) || (0, c.containsThis)(e, c.yyyymmdd) || (0, c.containsThis)(e, c.knexDate) || (0, c.containsThis)(e, c.stringDate) || e instanceof Date) }
+            function S(e, t) { var n = g(e),
+                    r = g(t),
+                    o = b(n),
+                    i = b(r); return !0 == (!0 === o && !0 === i) ? n.isBefore(r) : (0, m.upset)("something wrong with date - is before function", "when_you_free/compare.js") }
 
-            function S(e) { if ((0, c.containsThis)(e, c.knexDate)) return l = y((f = e.split("T"))[0].split("-")), m = y(f[1].split("Z")[0].split(":")), s(l[0], l[1] - 1, l[2], m[0], m[1], m[2]); if ((0, c.containsThis)(e, c.hhmm)) return Y(e); if ((0, c.containsThis)(e, c.hhmmss)) return Y(e); if ((0, c.containsThis)(e, c.dashDDMMYYYY)) return g(e); if ((0, c.containsThis)(e, c.dashYYYYMMDD)) return g(e); if ((0, c.containsThis)(e, c.hyphenDDMMYYYY)) return b(e); if ((0, c.containsThis)(e, c.hyphenYYYYMMDD)) return b(e); if ((0, c.containsThis)(e, c.yyyymmdd)) return o = (r = e).slice(0, 4), a = r.slice(4, 6), u = r.slice(6, 8), i(parseInt(o), parseInt(a), parseInt(u)); if ((0, c.containsThis)(e, c.stringDate)) { var n = e.replace(",", ""); return T(n = n.toLowerCase().trim()) } return (e instanceof Date || !!t()(e).isValid()) && t()(e); var r, o, a, u, f, l, m }
+            function v(e, t, n) { var r = g(e),
+                    o = g(t),
+                    i = b(r),
+                    a = b(o); return i && a ? Math.abs(r.diff(o, n)) : (0, m.upset)("something wrong with date - difference function", "when_you_free/compare.js") }
 
-            function w(e) { return void 0 !== e && "object" === d(e) || (0, m.upset)("not a valid date" + e, "when_you_free module") }
+            function D(e, t, n) { var r = g(e),
+                    o = g(t),
+                    i = g(n),
+                    a = b(o),
+                    s = b(i),
+                    u = b(r); return a && s && u ? r.isBetween(o, i) : (0, m.upset)("something wrong with date - is between function", "when_you_free/compare.js") }
 
-            function D(e, t) { var n = S(e),
-                    r = S(t),
-                    o = w(n),
-                    i = w(r); return !0 == (!0 === o && !0 === i) ? n.isBefore(r) : (0, m.upset)("something wrong with date - is before function", "when_you_free/compare.js") }
-
-            function M(e, t, n) { var r = S(e),
-                    o = S(t),
-                    i = w(r),
-                    a = w(o); return i && a ? Math.abs(r.diff(o, n)) : (0, m.upset)("something wrong with date - difference function", "when_you_free/compare.js") }
-
-            function _(e, t, n) { var r = S(e),
-                    o = S(t),
-                    i = S(n),
-                    a = w(o),
-                    u = w(i),
-                    s = w(r); return a && u && s ? r.isBetween(o, i) : (0, m.upset)("something wrong with date - is between function", "when_you_free/compare.js") }
-
-            function I(e, n) { var r = S(e),
+            function w(e, n) { var r = g(e),
                     o = new Date,
                     i = (t()(o), t()(r)),
                     a = t()(o); return t().duration({ from: i, to: a }).as("days") <= n }
 
-            function A(t, n, r) { var o = S(t),
-                    i = S(n); return console.log(o), console.log(i), (0, e.duration)({ from: o, to: i }).as(r) }
+            function M(t, n, r) { var o = g(t),
+                    i = g(n); return console.log(o), console.log(i), (0, e.duration)({ from: o, to: i }).as(r) }
 
-            function j(e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "from",
-                    n = S(e),
-                    r = w(n); return r.error ? (0, m.upset)("something wrong with date", "format.js") : "from" === t ? n.fromNow() : n.toNow() }
+            function _(e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "from",
+                    n = g(e),
+                    r = b(n); return r.error ? (0, m.upset)("something wrong with date", "format.js") : "from" === t ? n.fromNow() : n.toNow() }
 
-            function H(e, t) { var n = { localInput: "YYYY-MM-DDTHH:mm:ss", dateInput: "YYYY-MM-DD", timeInput: "HH:mm:ss", weekInput: "GGGG-[W]WW", monthInput: "YYYY-MM", mmmddyyyy: "ll", mmmmddyyyy: "LL" },
-                    r = S(e),
-                    o = w(r); return o ? n[t] ? r.format(n[t]) : r.format(t) : o }
+            function I(e, t) { var n = { localInput: "YYYY-MM-DDTHH:mm:ss", dateInput: "YYYY-MM-DD", timeInput: "HH:mm:ss", weekInput: "GGGG-[W]WW", monthInput: "YYYY-MM", mmmddyyyy: "ll", mmmmddyyyy: "LL" },
+                    r = g(e),
+                    o = b(r); return o ? n[t] ? r.format(n[t]) : r.format(t) : o }
 
-            function W(e) { var t = H(e, "hh:mm:ss"); if ("string" == typeof t) { var n = t.split(":"); return 60 * parseInt(n[0]) * 60 + 60 * parseInt(n[1]) + parseInt(n[2]) } return (0, m.upset)("something wrong with date", "format.js") }
+            function A(e) { var t = I(e, "hh:mm:ss"); if ("string" == typeof t) { var n = t.split(":"); return 60 * parseInt(n[0]) * 60 + 60 * parseInt(n[1]) + parseInt(n[2]) } return (0, m.upset)("something wrong with date", "format.js") }
 
-            function x(e) { var t = S(e),
-                    n = w(t); if (!0 !== n) return n; var r = t.toDate(); return new Date(r) }
-            t().locale("en") })(), u })() }));
+            function j(e) { var t = g(e),
+                    n = b(t); if (!0 !== n) return n; var r = t.toDate(); return new Date(r) }
+            t().locale("en") })(), s })() }));
