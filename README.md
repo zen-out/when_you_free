@@ -1,6 +1,10 @@
 # when_you_free
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![NPM Downloads](https://img.shields.io/npm/dw/when_you_free)## Instructions: 
+![NPM Downloads](https://img.shields.io/npm/dw/when_you_free)## 
+
+[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/when_you_free.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/when_you_free.png)
+
+Instructions: 
 ```npm install when_you_free ``` 
  ``` const when_you_free =  require('when_you_free')```
  
