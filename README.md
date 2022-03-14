@@ -11,7 +11,7 @@ Instructions:
 ## If install on html...: 
 - be sure to install the moment library 
 ```   <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-    <script src="./index.js"></script> ``` 
+    <script src="./node_modules/when_you_free/index.js"></script> ``` 
  ``` const output =  when_you_free.method(parameter)```
 
 ## Functions
