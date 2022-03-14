@@ -9,7 +9,9 @@ Instructions:
  ``` const when_you_free =  require('when_you_free')```
  
 ## If install on html...: 
-```<script src="https://cdn.jsdelivr.net/npm/when_you_free/dist/index.js"></script> ``` 
+- be sure to install the moment library 
+```   <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="./index.js"></script> ``` 
  ``` const output =  when_you_free.method(parameter)```
 
 ## Functions
