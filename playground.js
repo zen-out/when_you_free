@@ -1,7 +1,7 @@
 const moment = require("moment")
 const timezone = require("moment-timezone")
 const when_you_free = require("./dist/index.js")
-moment.locale("en")
+const { see } = require("code_clarity")
     // function testWhenYouFree() {
     //     let dateHTML = {
     //         one: "2020-03-01",
@@ -56,21 +56,35 @@ function createFullDate(year, month, day, hour, minute, second) {
         day = "0" + day;
     }
     let stringed = year + "-" + month + "-" + day;
-    let date = moment(stringed).add(hour, "h").add(minute, "m").add(second, "s")
-    let timezoned = timezone(date, "Asia/Hong Kong").format()
-    let splitted = timezoned.split("+")
-    let format2 = splitted[0] + "Z"
-    return new Date(format2)
+    let date = moment(stringed).add(hour, "h").add(minute, "m").add(second, "s").format()
+        // let timezoned = timezone(date, "Asia/Hong Kong").format()
+        // let splitted = timezoned.split("+")
+        // let format2 = splitted[0] + "Z"
+    return new Date(date)
 }
 
+let test2 = createFullDate(2022, 3, 1, 3, 3, 3)
+console.log(test2)
 let test = when_you_free.createFullDate(2022, 3, 1, 3, 3, 3)
-console.log("🚀 ~ file: playground.js ~ line 67 ~ test", test)
+see.should("createFullDate should return march 1, 3, 3, 3")
+see.is(test)
 let format2 = moment(test).format("ll")
-console.log(format2)
-let formatted = when_you_free.formatDateToPost("mar 1 2020")
-let formatted2 = when_you_free.formatDateToPost("2022-03-01T03:03:03.000Z")
-let second = when_you_free.formatDateToPost("01-03-2020")
-console.log(second)
-let third = when_you_free.formatDateToPost("2022-03-02")
+see.should("format accurately")
+see.is(format2)
 
-console.log("🚀 ~ file: playground.js ~ line 74 ~ third", third)
+let formatted = when_you_free.formatDateToPost("mar 1 2020")
+see.should("handle mar 1 2020")
+see.is(formatted)
+let testtest = when_you_free.createFullDate(2022, 3, 1, 3, 3, 3)
+see.should("handle date object")
+let object = when_you_free.formatDateToPost(testtest)
+see.is(object)
+see.should("handle knex format, march 3")
+
+let formatted2 = when_you_free.formatDateToPost("2022-03-01T03:03:03.000Z")
+see.is(formatted2)
+    // let second = when_you_free.formatDateToPost("01-03-2020")
+    // console.log(second)
+    // let third = when_you_free.formatDateToPost("2022-03-02")
+
+// console.log("🚀 ~ file: playground.js ~ line 74 ~ third", third)
