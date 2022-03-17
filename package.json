@@ -20,7 +20,7 @@
         "whats_wrong": "^1.3.2"
     },
     "devDependencies": {
-        "code_clarity": "^1.0.29"
+        "code_clarity": ""
     },
     "homepage": "https://zen-out.github.io/packages/when_you_free",
     "repository": "https://github.com/zen-out/when_you_free"
