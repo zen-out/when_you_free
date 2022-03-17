@@ -3629,17 +3629,9 @@
 
             function p(e) { return !!((0, _.containsThis)(e, _.hhmm) || (0, _.containsThis)(e, _.hhmmss) || (0, _.containsThis)(e, _.dashDDMMYYYY) || (0, _.containsThis)(e, _.dashYYYYMMDD) || (0, _.containsThis)(e, _.hyphenDDMMYYYY) || (0, _.containsThis)(e, _.hyphenYYYYMMDD) || (0, _.containsThis)(e, _.yyyymmdd) || (0, _.containsThis)(e, _.knexDate) || (0, _.containsThis)(e, _.stringDate) || e instanceof Date) }
 
-            function L(e) { try { if (e instanceof Date) { var r = new Date(e),
-                            a = r.getFullYear(),
-                            i = r.getMonth(),
-                            d = r.getDay(),
-                            c = r.getHours(),
-                            m = r.getMinutes(),
-                            f = r.getSeconds(); return t()(new Date(a, i, d, c, m, f)) } return (0, _.containsThis)(e, _.knexDate) ? (Y = M((L = e.split("T"))[0].split("-")), g = M(L[1].split("Z")[0].split(":")), u(Y[0], Y[1] - 1, Y[2], g[0], g[1], g[2])) : (0, _.containsThis)(e, _.hhmm) || (0, _.containsThis)(e, _.hhmmss) ? (h = e.split(":"), p = M(h), 2 === h.length ? s(p[0], p[1]) : 3 === h.length ? n(p[0], p[1], p[2]) : void 0) : (0, _.containsThis)(e, _.dashDDMMYYYY) || (0, _.containsThis)(e, _.dashYYYYMMDD) ? function(e) { var t = e.split("/"),
-                            n = M(t); return 4 === t[0].length ? o(n[0], n[1], n[2]) : o(n[2], n[1], n[0]) }(e) : (0, _.containsThis)(e, _.hyphenDDMMYYYY) || (0, _.containsThis)(e, _.hyphenYYYYMMDD) ? function(e) { var t = e.split("-"),
-                            n = M(t); return 4 === t[0].length ? o(n[0], n[1], n[2]) : o(n[2], n[1], n[0]) }(e) : (0, _.containsThis)(e, _.yyyymmdd) ? function(e) { var t = e.slice(0, 4),
-                            n = e.slice(4, 6),
-                            r = e.slice(6, 8); return o(parseInt(t), parseInt(n), parseInt(r)) }(e) : (0, _.containsThis)(e, _.stringDate) ? y(e) : !!t()(e).isValid() && t()(e) } catch (t) { return (0, l.upset)("not valid date" + e, "gettype.js", "should be valid") } var h, p, L, Y, g }
+            function L(e) { return (0, _.containsThis)(e, _.knexDate) ? (f = M((m = e.split("T"))[0].split("-")), h = M(m[1].split("Z")[0].split(":")), u(f[0], f[1] - 1, f[2], h[0], h[1], h[2])) : (0, _.containsThis)(e, _.hhmm) || (0, _.containsThis)(e, _.hhmmss) ? (r = e.split(":"), a = M(r), 2 === r.length ? s(a[0], a[1]) : 3 === r.length ? n(a[0], a[1], a[2]) : void 0) : (0, _.containsThis)(e, _.dashDDMMYYYY) || (0, _.containsThis)(e, _.dashYYYYMMDD) ? function(e) { var t = e.split("/"),
+                        n = M(t); return 4 === t[0].length ? o(n[0], n[1], n[2]) : o(n[2], n[1], n[0]) }(e) : (0, _.containsThis)(e, _.hyphenDDMMYYYY) || (0, _.containsThis)(e, _.hyphenYYYYMMDD) ? function(e) { var t = e.split("-"),
+                        n = M(t); return 4 === t[0].length ? o(n[0], n[1], n[2]) : o(n[2], n[1], n[0]) }(e) : (0, _.containsThis)(e, _.yyyymmdd) ? (d = (i = e).slice(0, 4), l = i.slice(4, 6), c = i.slice(6, 8), o(parseInt(d), parseInt(l), parseInt(c))) : (0, _.containsThis)(e, _.stringDate) ? y(e) : (e instanceof Date || !!t()(e).isValid()) && t()(e); var r, a, i, d, l, c, m, f, h }
 
             function Y(e) { return void 0 !== e && "object" === f(e) || (0, l.upset)("not a valid date" + e, "when_you_free module") }
 
