@@ -1,5 +1,5 @@
 const moment = require("moment")
-const timezone = require("moment-timezone")
+    // const timezone = require("moment-timezone")
 const when_you_free = require("./dist/index.js")
 const { see } = require("code_clarity")
     // function testWhenYouFree() {
@@ -46,25 +46,37 @@ const { see } = require("code_clarity")
 // let normal = when_you_free.createDay(2022, 3, 1)
 // console.log(normal)
 
-function createFullDate(year, month, day, hour, minute, second) {
-    month = month.toString()
-    if (month.length === 1) {
-        month = "0" + month
-    }
-    // day = day + 1;
-    if (day.toString().length === 1) {
-        day = "0" + day;
-    }
-    let stringed = year + "-" + month + "-" + day;
-    let date = moment(stringed).add(hour, "h").add(minute, "m").add(second, "s").format()
-        // let timezoned = timezone(date, "Asia/Hong Kong").format()
-        // let splitted = timezoned.split("+")
-        // let format2 = splitted[0] + "Z"
-    return new Date(date)
-}
+// function createFullDate(year, month, day, hour, minute, second) {
+//     month = month.toString()
+//     if (month.length === 1) {
+//         month = "0" + month
+//     }
+//     // day = day + 1;
+//     if (day.toString().length === 1) {
+//         day = "0" + day;
+//     }
+//     let stringed = year + "-" + month + "-" + day;
+//     let date = moment(stringed).add(hour, "h").add(minute, "m").add(second, "s").format()
+//         // let timezoned = timezone(date, "Asia/Hong Kong").format()
+//         // let splitted = timezoned.split("+")
+//         // let format2 = splitted[0] + "Z"
+//     return new Date(date)
+// }
 
-let test2 = createFullDate(2022, 3, 1, 3, 3, 3)
-console.log(test2)
+function createFullDate2(year, month, day, hour, minute, second) {
+    let getDay = when_you_free.createDay(year, month, day)
+    let date = moment(getDay).add(hour, "h").add(minute, "m").add(second, "s").toDate()
+    return date;
+}
+let test5 = createFullDate2(2022, 3, 1, 3, 3, 3)
+see.should("not have time zoned")
+see.is(test5)
+let test3 = when_you_free.createFullDate(2022, 3, 1, 3, 3, 3)
+let test4 = when_you_free.createDay(2022, 2, 3)
+see.should("be accurate")
+see.is(test4)
+see.should("not have time zoned")
+see.is(test3)
 let test = when_you_free.createFullDate(2022, 3, 1, 3, 3, 3)
 see.should("createFullDate should return march 1, 3, 3, 3")
 see.is(test)
@@ -77,7 +89,7 @@ see.should("handle mar 1 2020")
 see.is(formatted)
 let testtest = when_you_free.createFullDate(2022, 3, 1, 3, 3, 3)
 see.should("handle date object")
-let object = when_you_free.formatDateToPost(testtest)
+let object = when_you_free.formatDateToPost(new Date())
 see.is(object)
 see.should("handle knex format, march 3")
 
