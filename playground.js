@@ -17,7 +17,8 @@ let dateObject = {
     // let getDuration = when_you_free.getDuration("2022-03-14T02:20:15.986Z", "2022-03-14T02:07:15.986Z", "minutes")
     // let getDuration2 = when_you_free.getDuration("2022-03-01T19:06:31.047Z", "2022-03-01T20:04:32.047Z", "seconds")
     // let secondReadable = when_you_free.getReadableFormat("Dec 11, 2012", "from") // in two months
-    // let firstReadable = when_you_free.getReadableFormat("Dec 11, 2012", "to") // two month sago 
+let firstReadable = when_you_free.getReadableFormat("2023-02-23", "from") // two month sago 
+console.log("🚀 ~ file: playground.js ~ line 21 ~ firstReadable", firstReadable)
     // let formatted1 = when_you_free.format(dateHTML["one"], "ll")
     // let formatted2 = when_you_free.format(dateHTML["one"], "LL")
 let properDate = when_you_free.formatDateToPost(dateHTML["one"])
