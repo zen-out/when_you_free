@@ -5,8 +5,9 @@
     "main": "index.js",
     "scripts": {
         "play": "node playground.js",
-        "deploy": "npm run play && git add . && git commit -m 'updated' && git push && npm version patch && npm publish",
-        "update": "ncu --upgrade"
+        "deploy": "npm version patch && npm publish",
+        "update": "ncu --upgrade",
+        "push": "git add . && git commit -m 'updated' && git push"
     },
     "keywords": [
         "date"
@@ -17,5 +18,6 @@
         "moment": "^2.29.1"
     },
     "homepage": "https://zen-out.github.io/packages/when_you_free",
-    "repository": "https://github.com/zen-out/when_you_free"
+    "repository": "https://github.com/zen-out/when_you_free",
+    "devDependencies": {}
 }
