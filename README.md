@@ -48,6 +48,8 @@ $(()=> {
 <dd></dd>
 <dt><a href="#formatToTimezone">formatToTimezone()</a></dt>
 <dd></dd>
+<dt><a href="#getCurrentTime">getCurrentTime()</a></dt>
+<dd></dd>
 <dt><a href="#isDate">isDate()</a></dt>
 <dd></dd>
 </dl>
@@ -243,6 +245,16 @@ let third = when_you_free.formatToTimezone("Europe/Copenhagen", "Dec 11, 1994")
 let fifth = when_you_free.formatToTimezone("Europe/London", "Dec 11, 1994")
 let seventh = formatToTimezone("Asia/Tokyo", "Dec 11, 1994")
 let nine = formatToTimezone("Asia/Bangkok", "Dec 11, 1994")
+```
+<a name="getCurrentTime"></a>
+
+## getCurrentTime()
+**Kind**: global function  
+**Example**  
+```js
+wyf.getCurrentTime("Asia/Hong_Kong").then((response) => {
+    console.log(response)
+})
 ```
 <a name="isDate"></a>
 
