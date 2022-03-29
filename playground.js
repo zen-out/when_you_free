@@ -1,10 +1,5 @@
 const wyf = require("./index.js")
-const { see } = require("code_clarity")
-const moment = require("moment")
 wyf.getCurrentTime("Asia/Hong_Kong").then((response) => {
     console.log(response)
 })
-console.log(hk)
-    // let ten = formatToTimezone("Europe/Barcelona", "Dec 11, 1994")
-    // see.should("be in barcelona time")
-    // see.is(ten)
+wyf.list()
